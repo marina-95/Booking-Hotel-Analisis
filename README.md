@@ -5,6 +5,12 @@ Utilizo una base de datos de un hotel ficticio extraído de [Kaggle](https://www
 
 ## Análisis
 Mi intención es llevar a cabo un análisis del tipo estratégico destinado a la gerencia del hotel, logrando así ayudar en la toma de decisiones.
+Respondo preguntas como:
+- ¿De qué países provienen los huéspedes?
+- ¿Cuántas noches (en promedio) se hospedan las personas según el tipo de hotel?
+- ¿Cuál es la tasa de cancelación que posee cada hotel?
+- ¿En qué mes se realizan más reservas?
+- ¿Qué segmentación del mercado es la que predomina?
 
 ## Herramientas
 - SQL: creación de tablas/vistas y posterior análisis
