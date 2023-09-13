@@ -1,3 +1,5 @@
+--En esta sección creo varias tablas para mis relaciones-entidad y luego creo las vistas para importarlas en Power BI--
+
 --Creo tabla de tipo de hotel--
 --INICIO
 
@@ -124,8 +126,6 @@ insert into customers_types
 select distinct customer_type
 FROM [dbo].[hotel_booking];
 
-select * from customers_types;
-
 --FIN
 
 
@@ -142,8 +142,6 @@ create table reservations_status
 insert into reservations_status
 select distinct reservation_status
 FROM [dbo].[hotel_booking];
-
-select * from reservations_status;
 
 --FIN
 
