@@ -1,4 +1,4 @@
---En esta sección creo varias tablas para mis relaciones-entidad y luego creo las vistas para importarlas en Power BI--
+--En esta sección creo varias tablas para mi diagrama entidad-relacion y luego creo las vistas para importarlas en Power BI--
 
 --Creo tabla de tipo de hotel--
 --INICIO
