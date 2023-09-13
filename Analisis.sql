@@ -42,7 +42,7 @@ where r.id_reservation_status = 3
 group by r.id_reservation_status, s.name, t.name;
 
 
---4) En qué mes/meses se hacen más reservas? (se verá mejor en una visualización)
+--4) ¿En qué mes/meses se hacen más reservas? (se verá mejor en una visualización)
 
 select month(arrival_date) as mes, count(is_canceled) as cant_reservas
 from [dbo].[hotel_booking_new]
@@ -50,7 +50,7 @@ where is_canceled = 0
 group by month(arrival_date)
 order by month(arrival_date);
 
---5) Segmentacion de mercado
+--5) Segmentación de mercado
 
 select s.name, count(id_hotel_booking_new) as cant_reservas, (count(id_hotel_booking_new) * 100.0/ (select count(id_hotel_booking_new) from [dbo].[hotel_booking_new])) as porcentaje
 from [dbo].[hotel_booking_new] r
