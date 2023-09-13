@@ -4,7 +4,7 @@
 Utilizo una base de datos de un hotel ficticio extraído de [Kaggle](https://www.kaggle.com/datasets/mojtaba142/hotel-booking)
 
 ## Análisis
-Mi intención es llevar a cabo un análisis del tipo estratégico. 
+Mi intención es llevar a cabo un análisis del tipo estratégico destinado a la gerencia del hotel, logrando así ayudar en la toma de decisiones.
 
 ## Herramientas
 - SQL: creación de tablas/vistas y posterior análisis
