@@ -8,7 +8,7 @@
 - [Preguntas y respuestas](#preguntas-y-respuestas)
 - [Conclusiones](#conclusiones)
 - [Dashboard](#dashboard)
-- 
+
 ## Introducción
 Utilizo una base de datos de un hotel ficticio extraído de [Kaggle](https://www.kaggle.com/datasets/mojtaba142/hotel-booking). 
 El mismo contiene 119.390 observaciones. Cada observación representa una reserva de hotel entre el 1 de julio de 2015 y el 31 de agosto de 2017, incluyendo la reserva que efectivamente llegó y la reserva que fue cancelada.
@@ -145,7 +145,11 @@ order by cant_reservas desc
 | Undefined     | 2             | 0.002      |
 
 ## Conclusiones
-
+- Los huéspedes provenientes de  **Portugal** son los que más reservan en estos hoteles.
+- Los huéspedes reservan, en promedio, **4 noches** en el _Resort Hotel_ y **2 noches** en _City Hotel_.
+- La tasa de cancelación es del **36 %** en total, siendo **27 %** de _City Hotel_ y el resto de _Resort Hotel_.
+- El mes con más reserva es **Agosto**.
+- La segmentación q
 
 ## Dashboard
 ![Booking_page-0001](https://github.com/marina-95/Booking-Hotel-Analisis/assets/144913530/d119edb3-1862-4240-9f68-af19ae7252ee)
