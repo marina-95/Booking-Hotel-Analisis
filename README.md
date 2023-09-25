@@ -1,5 +1,5 @@
 # 🏨 Booking Hotel - Análisis
-(logo)
+![WhatsApp Image 2023-09-24 at 21 06 01](https://github.com/marina-95/Booking-Hotel-Analysis/assets/144913530/9fb57506-3291-4a88-8a8c-dcb1336d4d7a)
 
 ## Tabla de Contenido
 - [Introducción](#introducción)
