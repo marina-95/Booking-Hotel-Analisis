@@ -16,7 +16,7 @@ El mismo contiene 119.390 observaciones. Cada observación representa una reserv
 Mi intención es llevar a cabo un análisis del tipo estratégico destinado a la gerencia del hotel, logrando así ayudar en la toma de decisiones. 
 
 ## Herramientas utilizadas
-- SQL
+- SQL Server
 - Power BI
 - Canva
 
