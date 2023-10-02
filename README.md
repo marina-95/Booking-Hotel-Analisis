@@ -26,17 +26,15 @@ Mi intención es llevar a cabo un análisis del tipo estratégico destinado a la
 
 ````sql
 select 
-	top 5 count(id_hotel_booking_new) as Cant_Reservas, 
-	s.country as Paises
-from [dbo].[hotel_booking_new] r
-left join [dbo].[countries] s
-on r.id_country = s.id_country
-where s.country is not null
-group by s.country
-order by cant_reservas desc
+	top 5 count(id_hotel_booking_2) as Cant_Reservas, 
+	country as Pais
+from hotel_booking_2
+where country is not null
+group by country
+order by Cant_Reservas desc;
 ````
 #### Respuesta:
-| Cant_Reservas | Países |
+| Cant_Reservas | Pais   |
 | ------------- | ------ |
 | 48590         | PRT    |
 | 12129         | GBR    |
@@ -48,13 +46,10 @@ order by cant_reservas desc
 
 ````sql
 select 
-	avg(stays_in_week_nights + stays_in_weekend_nights) as Noches_Totales, 
-	s.name as Nombre_Hotel
-from [dbo].[hotel_booking_new] r
-left join [dbo].[hotel] s
-on r.id_hotel = s.[id_hotel]
-where r.stays_in_week_nights != 0 or r.stays_in_weekend_nights != 0
-group by s.name;
+	avg(stays_in_week_nights + stays_in_weekend_nights) as Noches_Totales, hotel as Nombre_Hotel
+from hotel_booking_2
+where stays_in_week_nights != 0 or stays_in_weekend_nights != 0
+group by hotel;
 ````
 #### Respuesta:
 | Noches_Totales | Nombre_Hotel   |
@@ -66,13 +61,11 @@ group by s.name;
 - Tasa cancelación general:
 ````sql
 select 
-	s.name as Estado_Reserva, 
-	round(count(r.id_reservation_status) / cast((select count(*) from [dbo].[hotel_booking_new]) as decimal(8,2)), 2) as Porcentaje
-from [dbo].[hotel_booking_new] r
-join  [dbo].[reservations_status] s
-on r.id_reservation_status = s.id_reservation_status
-where r.id_reservation_status = 3
-group by r.id_reservation_status, s.name;
+	reservation_status as Estado_Reserva, 
+	round(count(reservation_status) / cast((select count(*) from hotel_booking_2) as decimal(8,2)), 2) as Porcentaje
+from hotel_booking_2
+where reservation_status = 'Canceled'
+group by reservation_status;
 ````
 #### Respuesta:
 | Estado_Reserva | Porcentaje |
@@ -82,16 +75,12 @@ group by r.id_reservation_status, s.name;
 - Tasa cancelación por hotel:
 ````sql
 select 
-	t.name as Nombre_Hotel, 
-	s.name as Estado_Reserva, 
-	round(count(r.id_reservation_status) / cast((select count(*) from [dbo].[hotel_booking_new]) as decimal(8,2)), 2) as Porcentaje
-from [dbo].[hotel_booking_new] r
-join  [dbo].[reservations_status] s
-on r.id_reservation_status = s.id_reservation_status
-join [dbo].[hotel] t
-on r.id_hotel = t.id_hotel
-where r.id_reservation_status = 3
-group by r.id_reservation_status, s.name, t.name;
+	hotel as Nombre_Hotel, 
+	reservation_status as Estado_Reserva, 
+	round(count(reservation_status) / cast((select count(*) from hotel_booking_2) as decimal(8,2)), 2) as Porcentaje
+from hotel_booking_2
+where reservation_status = 'Canceled'
+group by reservation_status, hotel;
 ````
 #### Respuesta:
 | Nombre_Hotel   | Estado_Reserva | Porcentaje |
@@ -105,7 +94,7 @@ with Reservas_Por_Mes as (
     select
         datename(month, arrival_date) as Mes,
         count(is_canceled) as Cant_Reservas
-    from [dbo].[hotel_booking_new]
+    from hotel_booking_2
     where is_canceled = 0
     group by datename(month, arrival_date)
 )
@@ -123,14 +112,12 @@ order by Cant_Reservas desc;
 **5) ¿Qué segmentación del mercado es la que predomina?**
 ````sql
 select 
-	s.name as Segmentacion, 
-	count(id_hotel_booking_new) as Cant_Reservas, 
-	(count(id_hotel_booking_new) * 100.0/ (select count(id_hotel_booking_new) from [dbo].[hotel_booking_new])) as Porcentaje
-from [dbo].[hotel_booking_new] r
-join [dbo].[market_segments] s
-on r.id_market_segment = s.id_market_segment
-group by s.name
-order by cant_reservas desc
+	market_segment as Segmentacion_Mercado, 
+	count(id_hotel_booking_2) as Cant_Reservas, 
+	(count(id_hotel_booking_2) * 100.0/ (select count(id_hotel_booking_2) from hotel_booking_2)) as Porcentaje
+from hotel_booking_2
+group by market_segment
+order by Cant_Reservas desc
 ````
 #### Respuesta:
 | Segmentacion  | Cant_Reservas | Porcentaje |
@@ -143,6 +130,17 @@ order by cant_reservas desc
 | Complementary | 743           | 0.6        |
 | Aviation      | 237           | 0.2        |
 | Undefined     | 2             | 0.002      |
+
+**5) ¿Cuánto es el ADR promedio?**
+````sql
+select 
+	round(avg(adr),0) as ADR_Promedio_USD
+from hotel_booking_2
+````
+#### Respuesta:
+| ADR_Promedio_USD  |
+| ----------------- | 
+| 102               |
 
 ## Conclusiones
 - Los huéspedes provenientes de  **Portugal** son los que más reservan en estos hoteles.
