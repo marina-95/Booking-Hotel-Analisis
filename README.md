@@ -15,9 +15,9 @@ El mismo contiene 119.390 observaciones. Cada observación representa una reserv
 Mi intención es llevar a cabo un análisis del tipo estratégico destinado a la gerencia del hotel, logrando así ayudar en la toma de decisiones.
 
 ## Herramientas utilizadas
-- SQL: creación de tablas/vistas y posterior análisis
-- Power BI: visualización
-- Canva: creación de logo
+- SQL
+- Power BI
+- Canva
 
 ## Diagrama entidad relación
 ![Diagrama entidad-relacion](https://github.com/marina-95/Booking-Hotel-Analysis/assets/144913530/66e2c1fd-1dd9-45ea-be38-fc101d4d08b7)
