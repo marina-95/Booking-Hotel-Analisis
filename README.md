@@ -20,7 +20,7 @@ Mi intención es llevar a cabo un análisis del tipo estratégico destinado a la
 - Canva: creación de logo
 
 ## Diagrama entidad relación
-
+![Diagrama entidad-relacion](https://github.com/marina-95/Booking-Hotel-Analysis/assets/144913530/66e2c1fd-1dd9-45ea-be38-fc101d4d08b7)
 ## Preguntas y respuestas
 **1) ¿De qué países provienen los huéspedes?**
 
