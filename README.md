@@ -12,7 +12,8 @@
 ## Introducción
 Utilizo una base de datos de un hotel ficticio extraído de [Kaggle](https://www.kaggle.com/datasets/mojtaba142/hotel-booking). 
 El mismo contiene 119.390 observaciones. Cada observación representa una reserva de hotel entre el 1 de julio de 2015 y el 31 de agosto de 2017, incluyendo la reserva que efectivamente llegó y la reserva que fue cancelada.
-Mi intención es llevar a cabo un análisis del tipo estratégico destinado a la gerencia del hotel, logrando así ayudar en la toma de decisiones.
+
+Mi intención es llevar a cabo un análisis del tipo estratégico destinado a la gerencia del hotel, logrando así ayudar en la toma de decisiones. 
 
 ## Herramientas utilizadas
 - SQL
