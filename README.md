@@ -131,7 +131,7 @@ order by Cant_Reservas desc
 | Aviation      | 237           | 0.2        |
 | Undefined     | 2             | 0.002      |
 
-**5) ¿Cuánto es el ADR promedio?**
+**6) ¿Cuánto es el ADR promedio?**
 ````sql
 select 
 	round(avg(adr),0) as ADR_Promedio_USD
