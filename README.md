@@ -147,7 +147,7 @@ from hotel_booking_2
 - Los huéspedes reservan, en promedio, **4 noches** en el _Resort Hotel_ y **2 noches** en _City Hotel_.
 - La tasa de cancelación es del **36 %** en total, siendo **27 %** de _City Hotel_ y el resto de _Resort Hotel_.
 - El mes con más reserva es **Agosto**.
-- La segmentación q
+- La segmentación que predomina es **Online Travel Agents**.
 
 ## Dashboard
 ![Booking_page-0001](https://github.com/marina-95/Booking-Hotel-Analisis/assets/144913530/d119edb3-1862-4240-9f68-af19ae7252ee)
