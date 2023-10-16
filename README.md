@@ -47,7 +47,8 @@ order by Cant_Reservas desc;
 
 ````sql
 select 
-	avg(stays_in_week_nights + stays_in_weekend_nights) as Noches_Totales, hotel as Nombre_Hotel
+	avg(stays_in_week_nights + stays_in_weekend_nights) as Noches_Totales,
+	hotel as Nombre_Hotel
 from hotel_booking_2
 where stays_in_week_nights != 0 or stays_in_weekend_nights != 0
 group by hotel;
